@@ -101,11 +101,7 @@ my-fridge/
 Ritesh RC
 [Email](mailto:riteshchakramani123@gmail.com)
 
----
 
- License
-
-This project is licensed under the MIT License.
 
 
 
