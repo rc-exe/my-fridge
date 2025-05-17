@@ -1,0 +1,558 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #2c3e50;
+}
+
+.ingredient-selector {
+  background: rgba(255, 255, 255, 0);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.category {
+  margin-bottom: 20px;
+}
+
+.ingredient-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ingredient-item {
+  background: #e8f4f8;
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recipe-list {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.recipe-item {
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.recipe-item:last-child {
+  border-bottom: none;
+}
+
+.recipe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.recipe-header h3 {
+  margin: 0;
+  color: #3498db;
+}
+
+.match-percentage {
+  background: #27ae60;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.8em;
+}
+
+.recipe-details {
+  margin-top: 10px;
+}
+
+.appliance-indicator {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.appliance-tag {
+  background: #f1c40f;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.9em;
+}
+
+.time-info {
+  display: flex;
+  gap: 15px;
+  color: #7f8c8d;
+  font-size: 0.9em;
+}
+
+.recipe-details {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #3498db;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-size: 1em;
+}
+
+.ingredients-section, .instructions-section {
+  margin: 20px 0;
+}
+
+.ingredients-section ul, .instructions-section ol {
+  padding-left: 20px;
+}
+
+.instructions-section ol {
+  line-height: 1.6;
+}
+
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #2980b9;
+}
+.category-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.menu-btn {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: #4d4d4d;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.menu-btn.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #eee;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.app-header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  flex: 1;
+}
+
+/* Ingredient Selector sidebar */
+.ingredient-panel {
+  flex: 0 0 300px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  height: fit-content;
+}
+
+.ingredient-panel h2 {
+  margin-bottom: 15px;
+  color: #2980b9;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* RecipeList cards container example */
+.recipe-list {
+      background: #ecf0f100;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap: 20px;
+}
+
+/* Recipe card example */
+.recipe-card {
+  background: #ecf0f1;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+}
+
+/* RecipeDetails back button */
+.back-button {
+  background: #2980b9;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background: #1c5980;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .ingredient-panel {
+    flex: 1 1 auto;
+    margin-bottom: 20px;
+  }
+  
+  .main-content {
+    min-height: auto;
+  }
+}
+.button-54 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  background: white;
+  box-shadow:
+    1px 1px 0px 0px,
+    2px 2px 0px 0px,
+    3px 3px 0px 0px,
+    4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: all 0.2s ease;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
+
+/* Highlight when active (selected category) */
+.button-54.active {
+  background-color: #3498db;
+  color: white;
+  border-color: #2980b9;
+}
+.ingredient-toggle-btn {
+  background-color: #727272;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.ingredient-toggle-btn.selected {
+  background-color: #252c2f;
+  color: white;
+}
+/* Animation Styles */
+.app-header {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.app-header.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title-animation {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.title-animation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s ease-out 0.5s;
+}
+
+.app-header.loaded .title-animation::after {
+  transform: scaleX(1);
+}
+
+.subtitle-animation {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-out 0.3s, transform 0.6s ease-out 0.3s;
+}
+
+.app-header.loaded .subtitle-animation {
+  opacity: 1;
+  transform: translateY(0);
+}
+.floating-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.float-img {
+  position: absolute;
+  width: 60px;
+  opacity: 0.85;
+  animation: float 6s ease-in-out infinite;
+}
+
+.float1 { top: 10px; left: 5%; animation-delay: 0s; }
+.float2 { top: 20px; left: 25%; animation-delay: 1s; }
+.float3 { top: 0px; left: 55%; animation-delay: 2s; }
+.float4 { top: 30px; left: 80%; animation-delay: 3s; }
+
+@keyframes float {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+/* Container behind all content */
+.floating-background {
+  position: fixed;   /* fixed so it stays during scroll */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* clicks pass through */
+  z-index: -1;          /* behind all content */
+  overflow: hidden;
+}
+
+/* Basic style for all floating bg images */
+.float-bg-img {
+  position: absolute;
+  width: 60px;
+  opacity: 0.50;
+  animation-name: floatAround;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Different positions and animation durations/delays */
+.float-bg1 {
+  top: 10%; left: 5%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+}
+
+.float-bg2 {
+  top: 20%; left: 25%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.float-bg3 {
+  top: 35%; left: 45%;
+  animation-duration: 12s;
+  animation-delay: 4s;
+}
+
+.float-bg4 {
+  top: 50%; left: 70%;
+  animation-duration: 9s;
+  animation-delay: 1s;
+}
+
+.float-bg5 {
+  top: 60%; left: 15%;
+  animation-duration: 11s;
+  animation-delay: 3s;
+}
+
+.float-bg6 {
+  top: 75%; left: 35%;
+  animation-duration: 13s;
+  animation-delay: 5s;
+}
+
+.float-bg7 {
+  top: 80%; left: 60%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.float-bg8 {
+  top: 40%; left: 80%;
+  animation-duration: 14s;
+  animation-delay: 6s;
+}
+
+/* Animation moves image slightly in random directions */
+@keyframes floatAround {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(10px, -10px) rotate(5deg); }
+  50%  { transform: translate(-10px, 10px) rotate(-5deg); }
+  75%  { transform: translate(10px, 10px) rotate(5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+.ingredient-top-bar,
+.content-wrapper {
+  background-color: rgba(255, 255, 255, 0.5); /* white with 50% opacity */
+  /* optionally add some padding and border-radius for style */
+  padding: 1rem;
+  border-radius: 8px;
+}
+@font-face {
+  font-family: 'Black Mouse';
+  src: url('./assets/fonts/BlackMouseDEMO.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'Black Mouse', sans-serif;
+}
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255); /* white translucent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* high to be on top */
+}
+
+.floating-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* behind loading overlay */
+  pointer-events: none; /* clicks go through */
+}
+
+.app-header,
+.ingredient-top-bar,
+.content-wrapper,
+footer {
+  position: relative;
+  z-index: 10; /* above background but below loading overlay */
+}
